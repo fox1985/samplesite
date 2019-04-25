@@ -1,0 +1,19 @@
+{% extends "layout/basic.html" %}
+
+{% block title %}{{ bb.title }}{% endblock %}
+
+
+<p>Рубрика: {{ bb.rubric.name }}</p>
+
+{% block content %}
+    <h2>{{ bb.title }}</h2>
+    <p>{{ bb.content }}</p>
+    <p>Цена:{{ bb.price }}</p>
+
+    <a href="{% url 'edit'  pk=bb.pk  %}">Редактировать</a>
+
+
+    <a href="{% url 'del' pk=bb.pk  %}">Удалить запись</a>
+
+
+{% endblock %}

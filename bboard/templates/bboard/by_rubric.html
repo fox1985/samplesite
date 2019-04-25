@@ -1,0 +1,27 @@
+{% extends "layout/basic.html" %}
+
+{% block title %}{{ current_rubric.name }}{% endblock %}
+
+
+
+{% block content %}
+
+
+    <h3> Рубрика:{{ current_rubric.name }}</h3>
+
+    {% for bb in bbs %}
+        <div>
+            <h2>{{ bb.title }}</h2>
+            <p>{{ bb.content }}</p>
+            <p>{{ bb.published|date:"Y-m-d" }}</p>
+
+            <a href="{% url 'edit'  pk=bb.pk  %}">Редактировать</a>
+
+        <a href="{% url 'del' pk=bb.pk  %}">Удалить запись</a>
+
+        </div>
+    {% endfor %}
+
+
+
+{% endblock %}
