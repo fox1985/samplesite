@@ -135,4 +135,4 @@ LOGOUT_REDIRECT_URL = 'index'
 LOGIN_URL = 'login'
 
 #переводит пользовтеля на галвную страницу после авторизации
-LOGIN_REDIRECT_URL = 'index'
+LOGIN_REDIRECT_URL = '/bboard/'
