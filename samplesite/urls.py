@@ -19,7 +19,8 @@ from django.urls import path, include
 from bboard.views import index
 
 urlpatterns = [
-    path('bboard/', include('bboard.urls' )),
     path('admin/', admin.site.urls),
-    path('captcha/', include('captcha.urls'))
+    path('captcha/', include('captcha.urls')),
+    path('', include('bboard.urls', namespace='' )),
+
 ]

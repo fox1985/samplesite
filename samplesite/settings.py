@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'bboard.apps.BboardConfig',
     'testapp.apps.TestappConfig',
     'captcha',
+    'precise_bbcode',
+    'bootstrap4',
 
 ]
 
@@ -126,4 +128,11 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 #ПЕРЕХОД РЕГИСТРАТОРА ПОЛЬЗОВАТЕЛАЯ
-LOGOUT_REDIRECT_URL = 'bboard:index'
+LOGOUT_REDIRECT_URL = 'index'
+
+"LOGIN_URL: URL для перенаправления пользователя на вход (например, представления с помощью декоратора login_required )"
+
+LOGIN_URL = 'login'
+
+#переводит пользовтеля на галвную страницу после авторизации
+LOGIN_REDIRECT_URL = 'index'

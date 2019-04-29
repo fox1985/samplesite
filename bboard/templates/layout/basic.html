@@ -1,8 +1,11 @@
 {% load static %}
+{% load bootstrap4 %}
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% bootstrap_css %}
+    {% bootstrap_javascript  jquery='full'%}
     <meta charset="UTF-8">
     <title>{% block title %}Главная{% endblock %} -Доска объявлений</title>
 </head>
@@ -11,11 +14,21 @@
 <header>
     <link rel="stylesheet" type="text/css" href="{% static 'main/style.css' %}">
     <h1>Объявления</h1>
+
+     {% if user.is_authenticated %}
+        <p>Добро пожаловать, {{ user.username }}  <a  href="{% url 'logout' %}">Выйти из оканута</a> </p>
+
+    {% endif %}
 </header>
 
 <nav>
+
+    <a href="{% url 'login' %}">Вход</a>
     <a href="{% url 'index' %}">Главная</a>
     <a href="{% url 'add'  %}">Добавить</a>
+
+
+
 
 
 
@@ -28,6 +41,7 @@
     {% endfor %}
 
     {# левое меню с рубриками  #}
+
 
 </nav>
 

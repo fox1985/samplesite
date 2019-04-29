@@ -1,6 +1,7 @@
 {% extends "layout/basic.html" %}
-
+{% load bootstrap4 %}
 {% block title %}{{ current_rubric.name }}{% endblock %}
+
 
 
 
@@ -14,10 +15,11 @@
             <h2>{{ bb.title }}</h2>
             <p>{{ bb.content }}</p>
             <p>{{ bb.published|date:"Y-m-d" }}</p>
+            <p>Цена {{ bb.price}}</p>
 
             <a href="{% url 'edit'  pk=bb.pk  %}">Редактировать</a>
 
-        <a href="{% url 'del' pk=bb.pk  %}">Удалить запись</a>
+            <a href="{% url 'del' pk=bb.pk  %}">Удалить запись</a>
 
         </div>
     {% endfor %}
@@ -25,3 +27,4 @@
 
 
 {% endblock %}
+

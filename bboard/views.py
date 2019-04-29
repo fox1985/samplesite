@@ -7,6 +7,9 @@ from .forms import BbForm, SearchForm
 #-------------------------------------------------------------------------
 from  django.forms import modelformset_factory, formset_factory
 from django.forms.formsets import  ORDERING_FIELD_NAME
+#-------------------------------------------------------------------------
+from precise_bbcode.bbcode import get_parser
+
 
 
 
@@ -72,6 +75,13 @@ def index(request):
     context = {'rubrics': rubrics, 'page': page, 'bbs': page.object_list}
     return  render(request, 'bboard/index.html', context)
 
+
+
+def detail(request, pk):
+    parser = get_parser()
+    bb = Bb.objects.get(pk=pk)
+    parsed_content = parser.render(bb.content)
+
 #----------------------------------------------------------------------------------------
 
 
@@ -109,6 +119,7 @@ def formset_processing(request):
             context = {'formset': formset}
             return render(request, 'bboard/formset.html', context)
 
+#------------------------------------------------------------------------------------------------
 
 
 

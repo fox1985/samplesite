@@ -1,5 +1,7 @@
 {% extends 'layout/basic.html' %}
 
+
+
 {% block content %}
 
     {% for bb in bbs %}
@@ -12,7 +14,7 @@
         {# <p><a href="{% url 'by_rubric' bb.rubric.pk %}">{{ bb.rubric.name }}</a></p> #}
 
 
-        <p>{{ bb.published|date:"Y-m-d" }}</p>
+        <p>{{ bb.published|date:"D d M Y" }}</p>
 
         </div>
     {% endfor %}
@@ -21,3 +23,6 @@
 
 
 {% endblock %}
+
+
+
