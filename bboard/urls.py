@@ -15,6 +15,8 @@ Including another URLconf
 """
 
 from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
 
 from .views import index, by_rubric, add_and_save
 #---------------------------------------
@@ -41,6 +43,7 @@ urlpatterns = [
     #path('', index, name='ndex'),
     #path('add/', add_and_save, name='add'),#добавить обявения
 
+
     #------------------------------------------------------------------
 
     path('bboard/', BbIindexView.as_view(), name='index'),
@@ -55,11 +58,13 @@ urlpatterns = [
 
     path('delete/<int:pk>/', BbDeleteView.as_view(), name='del'),  # удалить запись
 
+
+
     #-----------------------------------------------------------------------------------
     #Контроллер LogoutView. выход с сайта
     path('accounts/login/', LoginView.as_view(), name='login'),
 
-    # выход пользовтеля
+    # выход пользовтеля LogoutView
     path('accounts/logout/', LogoutView.as_view(), name='logout'),
 
     # Контроллер Password ChangeView: смена пароля
@@ -81,9 +86,7 @@ urlpatterns = [
     path('accounts/reset/done/', PasswordResetCompleteView.as_view(template_name='registration/password_confirmed.html'), name='password_reset_complete'),
 
 
-
-
-
-
-
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

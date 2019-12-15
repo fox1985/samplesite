@@ -4,9 +4,12 @@ from .models import Bb, Rubric
 from django.forms import  modelform_factory, DecimalField
 from django.forms.widgets import Select
 from django import forms
+from django.core import validators
 #--------------------------------------------
 #CAPTCHA
 from captcha.fields import CaptchaField
+#----------------------------------------------
+
 
 class BbForm(ModelForm):
     """форма из модели"""
@@ -38,3 +41,13 @@ class SearchForm(forms.Form):
     required_css_class = 'required'
     keyword = forms.CharField(max_length=20, label='Искомое слово')
     rucric = forms.ModelChoiceField(queryset=Rubric.objects.all(), label='Рубрика')
+
+
+
+
+
+
+
+
+
+

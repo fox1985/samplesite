@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'bboard.apps.BboardConfig',
-    'testapp.apps.TestappConfig',
     'captcha',
     'precise_bbcode',
     'bootstrap4',
@@ -62,6 +61,7 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             os.path.join(BASE_DIR, 'bboard/templates'),
+            os.path.join(BASE_DIR, 'testapp/templates'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -136,3 +136,13 @@ LOGIN_URL = 'login'
 
 #переводит пользовтеля на галвную страницу после авторизации
 LOGIN_REDIRECT_URL = '/bboard/'
+
+
+# Настройка подсистемы обработки выгруженных файлов
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
+#Обработчики загрузки
+FILE_UPLOAD_HANDLERS =  ["django.core.files.uploadhandler.MemoryFileUploadHandler",
+                         "django.core.files.uploadhandler.TemporaryFileUploadHandler"]

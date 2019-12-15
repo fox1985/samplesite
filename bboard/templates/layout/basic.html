@@ -22,7 +22,6 @@
 </header>
 
 <nav>
-
     <a href="{% url 'login' %}">Вход</a>
     <a href="{% url 'index' %}">Главная</a>
     <a href="{% url 'add'  %}">Добавить</a>
@@ -32,16 +31,13 @@
 
 
 
+
+
 {# левое меню с рубриками  #}
     {% for rubric in rubrics %}
         <a href="{% url 'by_rubric' rubric.pk %}">{{ rubric.name }}</a>
-
-
-
     {% endfor %}
-
     {# левое меню с рубриками  #}
-
 
 </nav>
 

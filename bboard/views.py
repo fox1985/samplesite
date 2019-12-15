@@ -76,12 +76,12 @@ def index(request):
     return  render(request, 'bboard/index.html', context)
 
 
-
+"""""""""
 def detail(request, pk):
     parser = get_parser()
     bb = Bb.objects.get(pk=pk)
     parsed_content = parser.render(bb.content)
-
+"""""
 #----------------------------------------------------------------------------------------
 
 
@@ -120,6 +120,8 @@ def formset_processing(request):
             return render(request, 'bboard/formset.html', context)
 
 #------------------------------------------------------------------------------------------------
+
+
 
 
 

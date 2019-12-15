@@ -13,3 +13,4 @@ admin.site.register(Bb, BbAdmin)
 
 admin.site.register(Rubric)
 
+
