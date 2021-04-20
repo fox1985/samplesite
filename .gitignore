@@ -1,0 +1,10 @@
+# не добавлеть папку совсем содержимым
+.idea/
+.vscode/
+copy/
+media/
+static/
+*db.sqlite3
+*.pyc
+emailsettings.py
+db.json
