@@ -8,3 +8,4 @@ static/
 *.pyc
 emailsettings.py
 db.json
+venv/
