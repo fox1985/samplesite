@@ -3,7 +3,7 @@
 .vscode/
 copy/
 media/
-static/
+
 *db.sqlite3
 *.pyc
 emailsettings.py
