@@ -20,6 +20,7 @@ def by_rubric(request, rubric_id):
 
 
 class BbCreateView(CreateView):
+    """Класс для формы добавления товара"""
     template_name = 'bboard/create.html'
     form_class = BbForm
     success_url = reverse_lazy('index')
